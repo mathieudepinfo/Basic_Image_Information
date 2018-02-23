@@ -11,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import sun.awt.image.ImageFormatException;
 
 /**
  * <p>
@@ -39,9 +38,9 @@ public class CustomImage {
 	 * @param ligne 
 	 * @return ImageFormatExpression with a StackTrace and a message
 	 */
-	private static ImageFormatException makeException(String message,String classe,String fonction,int ligne){
+	private static Exception makeException(String message,String classe,String fonction,int ligne){
 		
-		ImageFormatException e=new ImageFormatException(message);
+		Exception e=new Exception(message);
 		StackTraceElement[] s= {new StackTraceElement(classe,fonction,null,ligne)};
 		e.setStackTrace(s);
 		
@@ -53,9 +52,9 @@ public class CustomImage {
 	 * 
 	 * @param image : BufferedImage that contains the cst image to write in filename
 	 * @param filename 
-	 * @throws ImageFormatException,IOException 
+	 * @throws Exception,IOException 
 	 */
-	public static void write(BufferedImage image,String filename) throws ImageFormatException, IOException{
+	public static void write(BufferedImage image,String filename) throws Exception, IOException{
 		
 		
 		
@@ -110,9 +109,9 @@ public class CustomImage {
 	 * Public function that read a cst file with a given name filename and return a compatible BufferedImage
 	 * @param filename
 	 * @return a BufferedImage that represent the image stored in the file named filename
-	 * @throws FileNotFoundException,IOException, ImageFormatException
+	 * @throws FileNotFoundException,IOException, Exception
 	 */
-	public static BufferedImage read(File filename)throws FileNotFoundException,IOException, ImageFormatException{
+	public static BufferedImage read(File filename)throws FileNotFoundException,IOException, Exception{
 		
 		String nm="",pal="",dims="",pixel_size="";
 		InputStream flux;

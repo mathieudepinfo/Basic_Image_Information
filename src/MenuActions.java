@@ -2,7 +2,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import sun.awt.image.ImageFormatException;
+
+
+
 
 /**
  * 
@@ -49,9 +51,9 @@ public class MenuActions {
 	 * Public function that create a BufferedImage from a chosen file, if it fails returns null
 	 * @param fichier a file from which the image should be loaded
 	 * @return a BufferedImage 
-	 * @throws ImageFormatException,IOException 
+	 * @throws Exception,IOException 
 	 */
-	public static BufferedImage loadImage(File fichier) throws ImageFormatException,IOException {
+	public static BufferedImage loadImage(File fichier) throws Exception,IOException {
 		
 	    BufferedImage im=null;
 	    try
